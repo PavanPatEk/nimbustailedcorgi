@@ -57,16 +57,16 @@ body.night {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
 }
-.cloud1 { top: 10%; width: 180px; height: 60px; animation-duration: 25s; }
-.cloud1::before { width: 80px; height: 80px; top: -30px; left: 25px; }
-.cloud1::after { width: 60px; height: 60px; top: -20px; right: 25px; }
+.cloud1 { top: 10%; width: 220px; height: 75px; animation-duration: 25s; }
+.cloud1::before { width: 100px; height: 100px; top: -40px; left: 30px; }
+.cloud1::after { width: 80px; height: 80px; top: -25px; right: 30px; }
 
-.cloud2 { top: 25%; width: 240px; height: 80px; animation-duration: 35s; animation-delay: -10s; }
-.cloud2::before { width: 100px; height: 100px; top: -40px; left: 35px; }
-.cloud2::after { width: 80px; height: 80px; top: -25px; right: 35px; }
+.cloud2 { top: 25%; width: 280px; height: 95px; animation-duration: 35s; animation-delay: -10s; }
+.cloud2::before { width: 120px; height: 120px; top: -50px; left: 45px; }
+.cloud2::after { width: 100px; height: 100px; top: -35px; right: 45px; }
 
 @keyframes moveClouds {
-  from { left: -300px; }
+  from { left: -350px; }
   to { left: 100vw; }
 }
 
@@ -74,8 +74,8 @@ body.night {
 .drop {
   position: absolute;
   background: linear-gradient(transparent, rgba(255, 255, 255, 0.6));
-  width: 1px;
-  height: 25px;
+  width: 2px;
+  height: 30px;
   animation: fall linear infinite;
 }
 @keyframes fall {
@@ -94,13 +94,13 @@ body.night {
 /* Moon & Stars FX */
 .moon {
   position: absolute;
-  top: 40px;
-  right: 60px;
-  width: 70px;
-  height: 70px;
+  top: 50px;
+  right: 80px;
+  width: 90px;
+  height: 90px;
   background: #fef08a;
   border-radius: 50%;
-  box-shadow: 0 0 20px #fef08a;
+  box-shadow: 0 0 30px #fef08a;
 }
 .star {
   position: absolute;
@@ -113,22 +113,23 @@ body.night {
   to { opacity: 1; }
 }
 
-/* Main Container & Header */
+/* Main Container - Scaled Up & Widened */
 .container {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  width: 92vw;
+  max-width: 1550px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
 header {
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 20px;
-  margin-bottom: 25px;
+  backdrop-filter: blur(12px);
+  padding: 35px;
+  border-radius: 24px;
+  margin-bottom: 30px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
@@ -137,39 +138,39 @@ body.day header {
 }
 
 h1 {
-  font-size: 2.8rem;
-  margin-bottom: 6px;
+  font-size: 3.8rem;
+  margin-bottom: 8px;
 }
 
 p.subtitle {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   opacity: 0.9;
 }
 
 .time-badge {
   display: inline-block;
-  margin-top: 12px;
-  padding: 6px 16px;
+  margin-top: 16px;
+  padding: 8px 22px;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.25);
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
 }
 
-/* Two Column Layout Grid */
+/* Two Column Layout Grid - Expanded Ratio */
 .main-layout {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 25px;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 30px;
   text-align: left;
 }
 
 /* Left Column: Gallery */
 .gallery-section {
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 24px;
 }
 
 body.day .gallery-section {
@@ -177,21 +178,21 @@ body.day .gallery-section {
 }
 
 .gallery-section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
 }
 
 .gallery-card {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   aspect-ratio: 1 / 1;
   cursor: pointer;
   background-color: #111;
@@ -213,15 +214,15 @@ body.day .gallery-section {
 .sidebar-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .sidebar-card {
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 22px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  backdrop-filter: blur(12px);
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
 body.day .sidebar-card {
@@ -229,27 +230,27 @@ body.day .sidebar-card {
 }
 
 .sidebar-card h2 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
 }
 
 /* Social Buttons */
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .social-btn {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
-  border-radius: 12px;
+  gap: 14px;
+  padding: 16px 22px;
+  border-radius: 16px;
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.15rem;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -266,57 +267,57 @@ body.day .sidebar-card {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 12px;
   text-align: center;
 }
 
 .stat-box {
-  background: rgba(0, 0, 0, 0.15);
-  padding: 12px 8px;
-  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.18);
+  padding: 16px 10px;
+  border-radius: 16px;
 }
 
 body.day .stat-box {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .stat-box h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 800;
 }
 
 .stat-box p {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   opacity: 0.85;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 /* Media Kit Section */
 .media-kit-text {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  margin-bottom: 15px;
-  opacity: 0.9;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  opacity: 0.95;
 }
 
 .values-tags {
   display: flex;
-  gap: 8px;
-  margin-bottom: 15px;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
 .values-tags span {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  padding: 4px 10px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.2);
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
 }
 
 body.day .values-tags span {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .btn-pdf {
@@ -325,10 +326,10 @@ body.day .values-tags span {
   background: #2563eb;
   color: #fff;
   font-weight: 700;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 16px;
+  border-radius: 16px;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   transition: background 0.2s ease;
 }
 
@@ -337,10 +338,10 @@ body.day .values-tags span {
 }
 
 .contact-email {
-  font-size: 0.85rem;
+  font-size: 1rem;
   text-align: center;
-  margin-top: 12px;
-  opacity: 0.8;
+  margin-top: 15px;
+  opacity: 0.85;
   font-weight: 600;
 }
 
@@ -365,15 +366,15 @@ body.day .values-tags span {
 
 .lightbox-content {
   position: relative;
-  max-width: 85vw;
-  max-height: 85vh;
+  max-width: 90vw;
+  max-height: 90vh;
 }
 
 .lightbox-content img {
   max-width: 100%;
-  max-height: 85vh;
+  max-height: 90vh;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 5px 25px rgba(0,0,0,0.5);
 }
 
@@ -382,7 +383,7 @@ body.day .values-tags span {
   top: 20px;
   right: 30px;
   color: #fff;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: bold;
   cursor: pointer;
   z-index: 1001;
@@ -394,7 +395,7 @@ body.day .values-tags span {
   top: 50%;
   transform: translateY(-50%);
   color: #fff;
-  font-size: 48px;
+  font-size: 55px;
   font-weight: bold;
   cursor: pointer;
   padding: 20px;
@@ -411,7 +412,10 @@ body.day .values-tags span {
 .lightbox-nav.next { right: 20px; }
 
 /* Responsive Layout Mobile Adjustment */
-@media (max-width: 850px) {
+@media (max-width: 950px) {
+  .container {
+    width: 95vw;
+  }
   .main-layout {
     grid-template-columns: 1fr;
   }
