@@ -113,7 +113,7 @@ body.night {
   to { opacity: 1; }
 }
 
-/* Main Container - Scaled Up & Widened */
+/* Main Container */
 .container {
   position: relative;
   z-index: 2;
@@ -157,7 +157,7 @@ p.subtitle {
   font-size: 1.05rem;
 }
 
-/* Two Column Layout Grid - Expanded Ratio */
+/* Two Column Layout Grid */
 .main-layout {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
@@ -254,13 +254,19 @@ body.day .sidebar-card {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+.social-btn i {
+  font-size: 1.5rem;
+  width: 28px;
+  text-align: center;
+}
+
 .social-btn:hover {
   transform: translateY(-2px);
   opacity: 0.9;
 }
 
 .social-btn.youtube { background: #ff0000; }
-.social-btn.tiktok { background: #000000; }
+.social-btn.tiktok { background: #000000; border: 1px solid rgba(255,255,255,0.15); }
 .social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 
 /* Stats Grid */
@@ -419,61 +425,4 @@ body.day .values-tags span {
   .main-layout {
     grid-template-columns: 1fr;
   }
-}
-
-/* Social Section Styling */
-.social-section {
-  margin: 25px 0;
-  text-align: left;
-}
-
-.social-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 20px;
-  border-radius: 16px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.05rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-}
-
-.social-btn i {
-  font-size: 1.5rem;
-  width: 28px;
-  text-align: center;
-}
-
-.social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  opacity: 0.95;
-}
-
-/* Individual Brand Styling */
-.social-btn.youtube {
-  background: #ff0000;
-}
-
-.social-btn.tiktok {
-  background: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.social-btn.instagram {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
