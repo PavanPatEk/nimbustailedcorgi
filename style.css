@@ -426,3 +426,58 @@ body.day .values-tags span {
     grid-template-columns: 1fr;
   }
 }
+
+/* Recent Partnership Styling */
+.recent-partnership {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+body.day .recent-partnership {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.recent-partnership h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  opacity: 0.95;
+}
+
+.partner-logo-link {
+  display: inline-block;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease;
+}
+
+.partner-logo-link:hover {
+  transform: scale(1.05);
+}
+
+.partner-logo {
+  max-width: 140px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Vertical Video Embed (Shorts Aspect Ratio) */
+.video-embed-container {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%; /* 9:16 aspect ratio for Shorts/TikToks */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  margin-bottom: 15px;
+}
+
+.video-embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
