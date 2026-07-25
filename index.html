@@ -11,7 +11,7 @@
   <!-- Dynamic FX Background Layer -->
   <div id="fx-layer"></div>
 
-  <!-- Page Content -->
+  <!-- Main Container -->
   <div class="container">
     <header>
       <h1>Nimbus 🐾</h1>
@@ -22,29 +22,25 @@
     <main class="gallery-section">
       <h2>Nimbus's Photo Gallery</h2>
       <div class="gallery-grid">
-        <div class="gallery-card">
-          <img src="nimbus photo 1.jpg" alt="Nimbus 1">
-        </div>
-        <div class="gallery-card">
-          <img src="nimbus photo 2.jpg" alt="Nimbus 2">
-        </div>
-        <div class="gallery-card">
-          <img src="nimbus photo 3.jpg" alt="Nimbus 3">
-        </div>
-        <div class="gallery-card">
-          <img src="nimbus photo 4.jpg" alt="Nimbus 4">
-        </div>
-        <div class="gallery-card">
-          <img src="nimbus photo 5.jpg" alt="Nimbus 5">
-        </div>
-        <div class="gallery-card">
-          <img src="nimbus photo 6.jpg" alt="Nimbus 6">
-        </div>
-        <div class="gallery-card">
-          <img src="nimbus photo 7.jpg" alt="Nimbus 7">
-        </div>
+        <div class="gallery-card"><img src="nimbus photo 1.jpg" alt="Nimbus Photo 1"></div>
+        <div class="gallery-card"><img src="nimbus photo 2.jpg" alt="Nimbus Photo 2"></div>
+        <div class="gallery-card"><img src="nimbus photo 3.jpg" alt="Nimbus Photo 3"></div>
+        <div class="gallery-card"><img src="nimbus photo 4.jpg" alt="Nimbus Photo 4"></div>
+        <div class="gallery-card"><img src="nimbus photo 5.jpg" alt="Nimbus Photo 5"></div>
+        <div class="gallery-card"><img src="nimbus photo 6.jpg" alt="Nimbus Photo 6"></div>
+        <div class="gallery-card"><img src="nimbus photo 7.jpg" alt="Nimbus Photo 7"></div>
       </div>
     </main>
+  </div>
+
+  <!-- Zoom Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-nav prev">&#10094;</div>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Zoomed Nimbus Photo">
+    </div>
+    <div class="lightbox-nav next">&#10095;</div>
   </div>
 
   <script src="script.js"></script>

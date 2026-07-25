@@ -1,3 +1,4 @@
+// Weather System Logic
 function updateWeather() {
   const now = new Date();
   const hours = now.getHours();
@@ -8,29 +9,23 @@ function updateWeather() {
   
   if (!fxLayer || !timeDisplay) return;
 
-  // Clear previous weather effects
   fxLayer.innerHTML = '';
   fxLayer.className = '';
   document.body.className = '';
 
   let currentMode = "";
 
-  // 8:00 AM (8) to 3:59 PM (15) -> Sunny Day
   if (hours >= 8 && hours < 16) {
     document.body.classList.add('day');
     currentMode = "Sunny Day ☀️";
-    
     fxLayer.innerHTML = `
       <div class="cloud cloud1"></div>
       <div class="cloud cloud2"></div>
     `;
-  } 
-  // 4:00 PM (16) to 5:59 PM (17) -> Rainy Evening
-  else if (hours >= 16 && hours < 18) {
+  } else if (hours >= 16 && hours < 18) {
     document.body.classList.add('rainy');
     currentMode = "Rainy Evening 🌧️";
-    
-    for (let i = 0; i < 45; i++) {
+    for (let i = 0; i < 40; i++) {
       const drop = document.createElement('div');
       drop.className = 'drop';
       drop.style.left = Math.random() * 100 + 'vw';
@@ -38,14 +33,11 @@ function updateWeather() {
       drop.style.animationDelay = Math.random() * 2 + 's';
       fxLayer.appendChild(drop);
     }
-  } 
-  // 6:00 PM (18) to 7:59 PM (19) -> Thunderstorm
-  else if (hours >= 18 && hours < 20) {
+  } else if (hours >= 18 && hours < 20) {
     document.body.classList.add('storm');
     fxLayer.classList.add('flash');
     currentMode = "Thunderstorm ⛈️";
-    
-    for (let i = 0; i < 75; i++) {
+    for (let i = 0; i < 70; i++) {
       const drop = document.createElement('div');
       drop.className = 'drop';
       drop.style.left = Math.random() * 100 + 'vw';
@@ -53,17 +45,14 @@ function updateWeather() {
       drop.style.animationDelay = Math.random() * 2 + 's';
       fxLayer.appendChild(drop);
     }
-  } 
-  // 8:00 PM (20) to 7:59 AM (7) -> Night Time
-  else {
+  } else {
     document.body.classList.add('night');
     currentMode = "Night Time 🌙";
-    
     const moon = document.createElement('div');
     moon.className = 'moon';
     fxLayer.appendChild(moon);
 
-    for (let i = 0; i < 55; i++) {
+    for (let i = 0; i < 50; i++) {
       const star = document.createElement('div');
       star.className = 'star';
       star.style.width = Math.random() * 3 + 1 + 'px';
@@ -75,11 +64,70 @@ function updateWeather() {
     }
   }
 
-  timeDisplay.innerText = `Local Time: ${timeString} • ${currentMode}`;
+  timeDisplay.innerText = `Current Time: ${timeString} (${currentMode})`;
 }
 
-// Execute on initial page load and refresh every 30 seconds
+// Lightbox / Zoom & Keyboard Navigation Logic
+let currentIndex = 0;
+let images = [];
+
+function initLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+  const prevBtn = document.querySelector('.lightbox-nav.prev');
+  const nextBtn = document.querySelector('.lightbox-nav.next');
+  
+  const cards = document.querySelectorAll('.gallery-card img');
+  images = Array.from(cards).map(img => img.src);
+
+  cards.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentIndex = index;
+      openLightbox();
+    });
+  });
+
+  function openLightbox() {
+    lightboxImg.src = images[currentIndex];
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex];
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex];
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+
+  // Close when clicking overlay background
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard navigation listener
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'Escape') closeLightbox();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   updateWeather();
-  setInterval(updateWeather, 30000);
+  setInterval(updateWeather, 60000);
+  initLightbox();
 });
